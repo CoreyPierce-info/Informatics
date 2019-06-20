@@ -1,0 +1,41 @@
+#rock paper scissors    
+from random import randint
+
+print("Welcome to a fun game of rock, paper, scissors")
+
+game = ["rock", "paper", "scissors"]
+
+computer = game[randint(0,2)]
+
+user_input = False
+
+while user_input == False:
+
+    user_input = input("Please enter rock, paper, or scissors:")
+    
+    if user_input == computer:
+        print("Tie!")
+
+    elif user_input == "rock":
+        if computer == "paper":
+            print("Loss: paper covers rock")
+        else:
+            print("You win!")
+
+    elif user_input == "paper":
+        if computer == "scissors":
+            print("Loss: scissors cut paper!")
+        else:
+            print("You win")
+
+    elif user_input == "scissors":
+        if computer == "rock":
+            print("Loss: rock smashes paper")
+        else:
+            print("You win")
+
+    else:
+        new = input("Please enter another word:")
+        
+    user_input = False
+    
