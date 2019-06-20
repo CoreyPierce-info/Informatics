@@ -1,0 +1,53 @@
+file_contents = [line.strip().split(" ") for line in open("teams.txt", "r")]
+
+#3
+for i in file_contents:
+    print("The", i[0], " have won", i[1], " games")
+#index the line to separate the team name and the wins
+
+
+print()
+#4
+list1 = [line[0] for line in file_contents if len(line[0]) < 5]
+print("Teams with names shorter than 5 letters:", list1)
+#index[0] to focus on the team name and if each name has less than 5 letters,
+#it will be placed in the list.
+
+print()
+
+#5
+list2 = sorted([[int(line[1]),line[0]] for line in file_contents],
+               reverse = True)
+#starting more broad, focus on reversing the lines within the file contents
+#placing line[1] infront of line[0] and using reverse thus focusing one the
+#the number instead of the team name.
+
+
+list3 = [list2[i][1] for i in range(3)]
+print("The three teams with the highest wins are:", list3)
+
+#make a new list that indexes the contents in the reverse list(list2) then
+#using range to find the top 3 scores
+
+#lab3
+
+numbers = [x for x in range(100) if x % 10 == 0]
+
+word = ["apple", "ball", "candle", "dog", "egg", "frog"]
+words = [i.upper() for i in word if len(i) < 4]
+print(words)
+
+words = [word[i].upper() if len(word[i]) < 4 else word[i] for i in range(len(word))]
+print(words)
+
+
+secret = input("Please enter the secret:")
+
+
+
+redacted = ["-" if x.isalpha() else x for x in secret]
+print("".join(redacted))
+
+[expression for value in collection if condition]
+
+'''
